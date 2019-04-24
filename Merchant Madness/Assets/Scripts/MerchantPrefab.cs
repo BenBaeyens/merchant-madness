@@ -71,4 +71,6 @@ public class MerchantPrefab : MonoBehaviour
         transform.GetChild(0).gameObject.SetActive(false);
         Debug.Log("Transaction ended.");
     }
+
+    
 }
