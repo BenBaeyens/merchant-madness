@@ -2263,7 +2263,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df8abd68c9d699e4c842347b9847fe74, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  goldCoins: 120
+  goldCoins: 280
   inventory: []
   balanceDisplay: {fileID: 194905316}
 --- !u!1 &1518001868

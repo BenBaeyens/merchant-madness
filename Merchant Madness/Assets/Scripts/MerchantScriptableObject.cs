@@ -7,6 +7,7 @@ public class MerchantScriptableObject : ScriptableObject
 {
     public new string name;
     public string welcomeText;
+    public string thankYouText;
 
     public string item1DisplayName;
     public string item1CodeName;

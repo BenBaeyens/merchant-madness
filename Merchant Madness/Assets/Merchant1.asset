@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: Merchant1
   m_EditorClassIdentifier: 
   name: Bob
-  welcomeText: Hi there, stranger! Welcome to my shop!
+  welcomeText: Hellostrangerwhatwoulditbe
+  thankYouText: haveaniceday
   item1DisplayName: Default Axe
   item1CodeName: axe_default
   item1Amount: 1
