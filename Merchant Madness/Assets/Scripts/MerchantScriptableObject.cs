@@ -9,13 +9,10 @@ public class MerchantScriptableObject : ScriptableObject
     public string welcomeText;
     public string thankYouText;
 
-    public string item1DisplayName;
-    public string item1CodeName;
-    public int item1Amount;
-    public int item1Price;
+    public int totalItemAmount;
 
-    public string item2DisplayName;
-    public string item2CodeName;
-    public int item2Amount;
-    public int item2Price;
+    public string itemDisplayName;
+    public string itemCodeName;
+    public int itemAmount;
+    public int itemPrice;
 }

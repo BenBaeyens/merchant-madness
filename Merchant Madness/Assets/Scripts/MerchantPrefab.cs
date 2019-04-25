@@ -12,6 +12,7 @@ public class MerchantPrefab : MonoBehaviour
     [SerializeField] Player player;
     [SerializeField] GameObject clickText;
     [SerializeField] AudioSource source;
+    [SerializeField] GameObject soldOutText;
 
     [Header("UI Elements")]
     [SerializeField] TextMeshProUGUI itemName;
@@ -19,8 +20,11 @@ public class MerchantPrefab : MonoBehaviour
     [SerializeField] TextMeshProUGUI itemAmount;
 
     bool isPlayerInRange = false;
+    int totalAmountOfItems;
 
     private void Start() {
+        GenerateColor();
+        totalAmountOfItems = merchant.totalItemAmount;
         source = gameObject.AddComponent<AudioSource>();
        
         player = FindObjectOfType<Player>();
@@ -30,6 +34,15 @@ public class MerchantPrefab : MonoBehaviour
             if(tempobjects[i].name == "ClickText")
             {
                 clickText = tempobjects[i];
+                break;
+            }
+        }
+        tempobjects = Resources.FindObjectsOfTypeAll<GameObject>();
+        for (int i = 0; i < tempobjects.Length; i++)
+        {
+            if (tempobjects[i].name == "SoldOutText")
+            {
+                soldOutText = tempobjects[i];
                 break;
             }
         }
@@ -47,27 +60,32 @@ public class MerchantPrefab : MonoBehaviour
 
     void Update()
     {
-        if(isPlayerInRange && Input.GetKeyDown(KeyCode.Space))
+        if(isPlayerInRange && Input.GetKeyDown(KeyCode.Space) && totalAmountOfItems > 0)
         {
             transform.GetChild(0).gameObject.SetActive(true);
             source.clip = Resources.Load<AudioClip>(merchant.welcomeText);
             source.Play();
-            itemName.text = merchant.item1DisplayName;
-            itemPrice.text = merchant.item1Price.ToString() + " Gold Coins";
-            itemAmount.text = merchant.item1Amount.ToString() + "x";
+            itemName.text = merchant.itemDisplayName;
+            itemPrice.text = merchant.itemPrice.ToString() + " Gold Coins";
+            itemAmount.text = merchant.itemAmount.ToString() + "x";
+        }
+       else  if (isPlayerInRange && Input.GetKeyDown(KeyCode.Space) && totalAmountOfItems == 0)
+        {
+            StartCoroutine(SoldOut());
         }
     }
 
 
     public void Purchase() {
-        if(player.goldCoins >= merchant.item1Price)
+        if(player.goldCoins >= merchant.itemPrice)
         {
             source.clip = Resources.Load<AudioClip>(merchant.thankYouText);
             source.Play();
-            player.goldCoins -= merchant.item1Price;
-            player.inventory.Add(merchant.item1CodeName.ToString());
-            Debug.Log(merchant.item1DisplayName + " aquired.");
+            player.goldCoins -= merchant.itemPrice;
+            player.inventory.Add(merchant.itemCodeName.ToString());
+            Debug.Log(merchant.itemDisplayName + " aquired.");
             Debug.Log(player.goldCoins);
+            totalAmountOfItems--;
 
             StopTransaction();
         }
@@ -78,5 +96,14 @@ public class MerchantPrefab : MonoBehaviour
         Debug.Log("Transaction ended.");
     }
 
+    public void GenerateColor() {
+        GetComponent<Renderer>().material.color = Random.ColorHSV();
+    }
+
+    IEnumerator SoldOut() {
+        soldOutText.SetActive(true);
+        yield return new WaitForSeconds(1);
+        soldOutText.SetActive(false);
+    }
     
 }

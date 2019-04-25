@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ce2fbb4e759d6924eacd756a3261a674, type: 3}
-  m_Name: Merchant1
+  m_Name: Keymerchant
   m_EditorClassIdentifier: 
-  name: Bob
-  welcomeText: Hellostrangerwhatwoulditbe
-  thankYouText: haveaniceday
+  name: Elai
+  welcomeText: Wouldyouliketobuyanything
+  thankYouText: thankyouverymuch
   totalItemAmount: 1
-  itemDisplayName: Wooden Axe
-  itemCodeName: axe_wooden
+  itemDisplayName: Mysterious Key
+  itemCodeName: key_1
   itemAmount: 1
-  itemPrice: 120
+  itemPrice: 50
