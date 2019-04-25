@@ -13,8 +13,9 @@ MonoBehaviour:
   m_Name: Merchant2
   m_EditorClassIdentifier: 
   name: Jack
-  welcomeText: Hi there, stranger! Welcome to my shop!
-  item1DisplayName: 
+  welcomeText: Wouldyouliketobuyanything
+  thankYouText: thankyouverymuch
+  item1DisplayName: Flame Axe
   item1CodeName: axe_enchanted_flame
   item1Amount: 1
   item1Price: 160
