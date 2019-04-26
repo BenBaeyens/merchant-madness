@@ -10,6 +10,8 @@ I want to try a few different things with this project, such as:
 - Maintaining a cleaner code structure
 - Not nesting if-statements
 - Scriptable objects
+- Learning more about custom inspector windows in Unity
+- A little bit of procedural color generation
 
 ## Things I got stuck with 
 #### Tree color generator
