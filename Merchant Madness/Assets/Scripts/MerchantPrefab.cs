@@ -5,19 +5,18 @@ using TMPro;
 
 public class MerchantPrefab : MonoBehaviour
 {
-    [Header("Define")]
+    [Header("Define the merchant type")]
     [SerializeField] MerchantScriptableObject merchant;
 
-    [Header("Predefined (DO NOT TOUCH)")]
-    [SerializeField] Player player;
-    [SerializeField] GameObject clickText;
-    [SerializeField] AudioSource source;
-    [SerializeField] GameObject soldOutText;
+    Player player;
+    GameObject clickText;
+    AudioSource source;
+    GameObject soldOutText;
 
-    [Header("UI Elements")]
-    [SerializeField] TextMeshProUGUI itemName;
-    [SerializeField] TextMeshProUGUI itemPrice;
-    [SerializeField] TextMeshProUGUI itemAmount;
+    
+    TextMeshProUGUI itemName;
+    TextMeshProUGUI itemPrice;
+    TextMeshProUGUI itemAmount;
 
     bool isPlayerInRange = false;
     int totalAmountOfItems;
