@@ -11,13 +11,14 @@ I want to try a few different things with this project, such as:
 - Not nesting if-statements
 - Scriptable objects
 
-## Update log
-- April 23, 2019
-  - Created project
-  - Added player
-  - Added scriptable merchant object
-  - Added merchant prefab
-  - Fixed minor bugs
-  - Set up basic testing scene
+## Things I got stuck with 
+#### Tree color generator
+- What is it? How did I get stuck?
+  - The color generator was supposed to be a cleanly-written algorithm that changed the color of trees based on one of three presets of colors. 
+  - For some reason, the algorithm can't find the colors from the asset folder.
+- How will I try to fix it?
+  - At the moment, the best way to fix it seems to manually input the colors into the prefab, which is still better than spaghetti-code, but not quite what I wanted it to be. 
+- How did I solve it?
+  - I didn't, not yet.
 
 ###### Developed by Kjip(Gamer). Original development since April 2019.
