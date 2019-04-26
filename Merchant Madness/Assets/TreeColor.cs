@@ -5,26 +5,21 @@ using UnityEngine;
 public class TreeColor : MonoBehaviour
 {
 
-    Color TreeType1Log1;
-    Color TreeType1Log2;
-    Color TreeType1Leaves1;
-    Color TreeType1Leaves2;
-
-    Color TreeType2Log1;
-    Color TreeType2Log2;
-    Color TreeType2Leaves1;
-    Color TreeType2Leaves2;
-
-    Color TreeType3Log1;
-    Color TreeType3Log2;
-    Color TreeType3Leaves1;
-    Color TreeType3Leaves2;
+    public List<Color> TreeLog1Type;
+    List<Color> TreeLog2Type;
+    List <Color> TreeLeaves1Type;
+    List <Color> TreeLeaves2Type;
 
     int treeType;
 
     private void Start() {
         
         ChangeColor();
+
+        TreeLog1Type = new List<Color>();
+        TreeLog2Type = new List<Color>();
+        TreeLeaves1Type = new List<Color>();
+        TreeLeaves2Type = new List<Color>();
     }
 
     public void ChooseTree() {
@@ -32,7 +27,8 @@ public class TreeColor : MonoBehaviour
         // 2 = pine
         // 3 = pink
 
-        treeType = Random.Range(1, 3);
+        treeType = Random.Range(0, 2);
+        Debug.Log(treeType);
     }
 
     public void ChangeColor() {
@@ -40,42 +36,31 @@ public class TreeColor : MonoBehaviour
         Material[] colors = Resources.FindObjectsOfTypeAll<Material>();
         for (int i = 0; i < colors.Length; i++)
         {
-            if (colors[i].name == "TreeType1Log1")
-                TreeType1Log1 = colors[i].color;
-            if (colors[i].name == "TreeType1Log2")
-                TreeType1Log2 = colors[i].color;
-            if (colors[i].name == "TreeType1Leaves1")
-                TreeType1Leaves1 = colors[i].color;
-            if (colors[i].name == "TreeType1Leaves2")
-                TreeType1Leaves2 = colors[i].color;
+            if (colors[i].name == "TreeLog1Type1")
+                TreeLog1Type.Add(colors[i].color);
 
-            if (colors[i].name == "TreeType2Log1")
-                TreeType2Log1 = colors[i].color;
-            if (colors[i].name == "TreeType2Log1")
-                TreeType2Log2 = colors[i].color;
-            if (colors[i].name == "TreeType2Leaves1")
-                TreeType2Leaves1 = colors[i].color;
-            if (colors[i].name == "TreeType2Leaves2")
-                TreeType2Leaves2 = colors[i].color;
+            Debug.Log("test");
+            if (colors[i].name == "TreeLog1Type" + i)
+                TreeLog1Type.Add(colors[i].color);
+            if (colors[i].name == "TreeLog2Type" + i)
+                TreeLog2Type.Add(colors[i].color);
+            if (colors[i].name == "TreeLeaves1Type" + i)
+                TreeLeaves1Type.Add(colors[i].color);
+            if (colors[i].name == "TreeLeaves2Type" + i)
+                TreeLeaves2Type.Add(colors[i].color);
+            else
+                Debug.Log(":(");
 
-            if (colors[i].name == "TreeType3Log1")
-                TreeType3Log1 = colors[i].color;
-            if (colors[i].name == "TreeType3Log1")
-                TreeType3Log2 = colors[i].color;
-            if (colors[i].name == "TreeType3Leaves1")
-                TreeType3Leaves1 = colors[i].color;
-            if (colors[i].name == "TreeType3Leaves2")
-                TreeType3Leaves2 = colors[i].color;
         }
 
         ChooseTree();
 
-        transform.GetChild(0).gameObject.GetComponent<Renderer>().material.color = Color.Lerp(("TreeType"+treeType+"Log1").color, BranchColor2.color, Random.Range(0f, 1f));
+        transform.GetChild(0).gameObject.GetComponent<Renderer>().material.color = Color.Lerp(TreeLog1Type[1], TreeLog2Type[1], Random.Range(0f, 1f));
         Transform leaveParent = gameObject.transform.Find("Leaves");
 
         for (int i = 0; i < leaveParent.childCount; i++)
         {
-            leaveParent.GetChild(i).gameObject.GetComponent<Renderer>().material.color = Color.Lerp(LeavesColor1.color, LeavesColor2.color, Random.Range(0f, 1f));
+            leaveParent.GetChild(i).gameObject.GetComponent<Renderer>().material.color = Color.Lerp(TreeLeaves1Type[treeType], TreeLog2Type[treeType], Random.Range(0f, 1f));
         }
     }
 }
