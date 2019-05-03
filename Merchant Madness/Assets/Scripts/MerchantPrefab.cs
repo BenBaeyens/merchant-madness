@@ -24,7 +24,7 @@ public class MerchantPrefab : MonoBehaviour
 
     private void Start() {
         merchantEntity = GameObject.Find(gameObject.name);
-        GenerateColor();
+       
 
         me = GameObject.Find(gameObject.name).GetComponent<MerchantEntity>();
         totalAmountOfItems = merchant.totalItemAmount;
@@ -82,10 +82,6 @@ public class MerchantPrefab : MonoBehaviour
     public void StopTransaction() {
         transform.GetChild(0).gameObject.SetActive(false);
         Debug.Log("Transaction ended.");
-    }
-
-    public void GenerateColor() {
-        merchantEntity.GetComponent<Renderer>().material.color = Random.ColorHSV();
     }
 
     IEnumerator SoldOut() {

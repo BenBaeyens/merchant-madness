@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1534108958411197040}
   - component: {fileID: 2172748791759753455}
+  - component: {fileID: 3094292987423155120}
   m_Layer: 0
   m_Name: MerchantMenu
   m_TagString: Untagged
@@ -53,6 +54,24 @@ MonoBehaviour:
   itemName: {fileID: 6969211488168856783}
   itemPrice: {fileID: 6969211488120100100}
   itemAmount: {fileID: 6969211489581770350}
+--- !u!114 &3094292987423155120
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2172748791759753452}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5b1893a1df993a41bdc195852b87d21, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  greencolor1:
+    serializedVersion: 2
+    rgba: 4278215680
+  greencolor2:
+    serializedVersion: 2
+    rgba: 4278255360
 --- !u!1 &6345706217106327129
 GameObject:
   m_ObjectHideFlags: 0
