@@ -15,11 +15,8 @@ MonoBehaviour:
   name: Jack
   welcomeText: Wouldyouliketobuyanything
   thankYouText: thankyouverymuch
-  item1DisplayName: Flame Axe
-  item1CodeName: axe_enchanted_flame
-  item1Amount: 1
-  item1Price: 160
-  item2DisplayName: 
-  item2CodeName: 
-  item2Amount: 0
-  item2Price: 0
+  totalItemAmount: 1
+  itemDisplayName: Wooden Sword
+  itemCodeName: sword_wooden
+  itemAmount: 1
+  itemPrice: 90

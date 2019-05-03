@@ -29,7 +29,8 @@ public class GateScript : MonoBehaviour
 
     private void OnTriggerEnter(Collider other) {
         isPlayerInRange = true;
-        gateClickText.SetActive(true);
+        if(player.inventory.Contains("key_1"))
+            gateClickText.SetActive(true);
     }
     private void OnTriggerExit(Collider other) {
         isPlayerInRange = false;

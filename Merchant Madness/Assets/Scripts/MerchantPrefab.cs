@@ -9,33 +9,30 @@ public class MerchantPrefab : MonoBehaviour
     [SerializeField] MerchantScriptableObject merchant;
 
     Player player;
-    GameObject clickText;
     AudioSource source;
     GameObject soldOutText;
+    GameObject merchantEntity;
+
+    MerchantEntity me;
 
     
-    TextMeshProUGUI itemName;
-    TextMeshProUGUI itemPrice;
-    TextMeshProUGUI itemAmount;
+    public TextMeshProUGUI itemName;
+    public TextMeshProUGUI itemPrice;
+    public TextMeshProUGUI itemAmount;
 
-    bool isPlayerInRange = false;
     int totalAmountOfItems;
 
     private void Start() {
+        merchantEntity = GameObject.Find(gameObject.name);
         GenerateColor();
+
+        me = GameObject.Find(gameObject.name).GetComponent<MerchantEntity>();
         totalAmountOfItems = merchant.totalItemAmount;
         source = gameObject.AddComponent<AudioSource>();
        
         player = FindObjectOfType<Player>();
-        GameObject[] tempobjects = Resources.FindObjectsOfTypeAll<GameObject>();
-        for (int i = 0; i < tempobjects.Length; i++)
-        {
-            if(tempobjects[i].name == "ClickText")
-            {
-                clickText = tempobjects[i];
-                break;
-            }
-        }
+
+        GameObject[] tempobjects;
         tempobjects = Resources.FindObjectsOfTypeAll<GameObject>();
         for (int i = 0; i < tempobjects.Length; i++)
         {
@@ -47,28 +44,20 @@ public class MerchantPrefab : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter(Collider other) {
-        isPlayerInRange = true;
-        clickText.gameObject.SetActive(true);
-    }
-
-    private void OnTriggerExit(Collider other) {
-        isPlayerInRange = false;
-        clickText.gameObject.SetActive(false);
-    }
-
     void Update()
     {
-        if(isPlayerInRange && Input.GetKeyDown(KeyCode.Space) && totalAmountOfItems > 0)
+        if(me.isPlayerInRange && Input.GetKeyDown(KeyCode.Space) && totalAmountOfItems > 0)
         {
-            transform.GetChild(0).gameObject.SetActive(true);
+            //Get the menu and set it active
+            transform.GetChild(0).gameObject.SetActive(true); 
+
             source.clip = Resources.Load<AudioClip>(merchant.welcomeText);
             source.Play();
             itemName.text = merchant.itemDisplayName;
             itemPrice.text = merchant.itemPrice.ToString() + " Gold Coins";
             itemAmount.text = merchant.itemAmount.ToString() + "x";
         }
-       else  if (isPlayerInRange && Input.GetKeyDown(KeyCode.Space) && totalAmountOfItems == 0)
+       else  if (me.isPlayerInRange && Input.GetKeyDown(KeyCode.Space) && totalAmountOfItems == 0)
         {
             StartCoroutine(SoldOut());
         }
@@ -96,7 +85,7 @@ public class MerchantPrefab : MonoBehaviour
     }
 
     public void GenerateColor() {
-        GetComponent<Renderer>().material.color = Random.ColorHSV();
+        merchantEntity.GetComponent<Renderer>().material.color = Random.ColorHSV();
     }
 
     IEnumerator SoldOut() {
