@@ -6,17 +6,36 @@ public class GenerateColor : MonoBehaviour
 {
     GameObject merchant;
 
-    public Color32 greencolor1 = new Color32(0, 10, 0, 255);
-    public Color32 greencolor2 = new Color32(0, 255, 0, 255);
+    public List<Color32> greencolors;
+    public List<Color32> redcolors;
+
+    
+
 
     private void Start() {
+        greencolors = new List<Color32>();
+        greencolors.Add(new Color32(0, 90, 0, 255));
+        greencolors.Add(new Color32(0, 255, 0, 255));
+
+        redcolors = new List<Color32>();
+        redcolors.Add(new Color32(90, 0, 0, 255));
+        redcolors.Add(new Color32(255, 0, 0, 255));
+
         merchant = GameObject.Find(gameObject.name);
 
-        float rand = Random.Range(0f, 1f);
+        GenerateRandomColor();
 
-        merchant.GetComponent<Renderer>().material.color = Color.Lerp(greencolor1, greencolor2, rand);
+    }
 
+    public void GenerateRandomColor() {
+        float colorval = Random.Range(0f, 1f);
+        int color = Random.Range(0, 2);
 
+        Debug.Log(color);
 
+        if (color == 0)
+            merchant.GetComponent<Renderer>().material.color = Color.Lerp(greencolors[0], greencolors[1], colorval);
+        if (color == 1)
+            merchant.GetComponent<Renderer>().material.color = Color.Lerp(redcolors[0], redcolors[1], colorval);
     }
 }
