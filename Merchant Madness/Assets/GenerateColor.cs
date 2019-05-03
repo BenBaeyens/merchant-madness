@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEditor;
 
 public class GenerateColor : MonoBehaviour
 {
@@ -12,7 +13,7 @@ public class GenerateColor : MonoBehaviour
     
 
 
-    private void Start() {
+    public void Start() {
         greencolors = new List<Color32>
         {
             new Color32(0, 90, 0, 255),
@@ -42,4 +43,23 @@ public class GenerateColor : MonoBehaviour
         if (color == 1)
             merchant.GetComponent<Renderer>().material.color = Color.Lerp(redcolors[0], redcolors[1], colorval);
     }
+}
+
+
+[CustomEditor(typeof(GenerateColor))]
+public class ColorInspector : Editor {
+
+    public GenerateColor gc;
+
+    public override void OnInspectorGUI() {
+        base.OnInspectorGUI();
+
+        GenerateColor gc = (GenerateColor)target;
+
+        if(GUILayout.Button("Generate Color"))
+        {
+            gc.Start();
+        }
+    }
+
 }
