@@ -59,6 +59,7 @@ public class ColorInspector : Editor {
         if(GUILayout.Button("Generate Color"))
         {
             gc.Start();
+
         }
     }
 
