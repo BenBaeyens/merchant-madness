@@ -13,13 +13,17 @@ public class GenerateColor : MonoBehaviour
 
 
     private void Start() {
-        greencolors = new List<Color32>();
-        greencolors.Add(new Color32(0, 90, 0, 255));
-        greencolors.Add(new Color32(0, 255, 0, 255));
+        greencolors = new List<Color32>
+        {
+            new Color32(0, 90, 0, 255),
+            new Color32(0, 255, 0, 255)
+        };
 
-        redcolors = new List<Color32>();
-        redcolors.Add(new Color32(90, 0, 0, 255));
-        redcolors.Add(new Color32(255, 0, 0, 255));
+        redcolors = new List<Color32>
+        {
+            new Color32(90, 0, 0, 255),
+            new Color32(255, 0, 0, 255)
+        };
 
         merchant = GameObject.Find(gameObject.name);
 
