@@ -35,3 +35,5 @@ sysinfo.txt
 *.apk
 *.unitypackage
 
+Merchant Madness/Assets/TMPro/*
+Merchant Madness/Assets/TMPro.meta
