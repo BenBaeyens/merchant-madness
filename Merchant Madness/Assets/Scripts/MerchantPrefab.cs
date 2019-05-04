@@ -48,6 +48,7 @@ public class MerchantPrefab : MonoBehaviour
     {
         if(me.isPlayerInRange && Input.GetKeyDown(KeyCode.Space) && totalAmountOfItems > 0)
         {
+            Time.timeScale = 0f;
             //Get the menu and set it active
             transform.GetChild(0).gameObject.SetActive(true); 
 
@@ -82,6 +83,7 @@ public class MerchantPrefab : MonoBehaviour
     public void StopTransaction() {
         transform.GetChild(0).gameObject.SetActive(false);
         Debug.Log("Transaction ended.");
+        Time.timeScale = 1f;
     }
 
     IEnumerator SoldOut() {
