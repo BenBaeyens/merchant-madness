@@ -15,10 +15,12 @@ public class MerchantPrefab : MonoBehaviour
 
     MerchantEntity me;
 
+    [HideInInspector] public int merchantcolor;
+
     
-    public TextMeshProUGUI itemName;
-    public TextMeshProUGUI itemPrice;
-    public TextMeshProUGUI itemAmount;
+    [HideInInspector] public TextMeshProUGUI itemName;
+    [HideInInspector] public TextMeshProUGUI itemPrice;
+    [HideInInspector] public TextMeshProUGUI itemAmount;
 
     int totalAmountOfItems;
 
