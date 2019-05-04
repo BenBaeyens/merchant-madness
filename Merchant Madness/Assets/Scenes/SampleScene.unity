@@ -318,7 +318,7 @@ PrefabInstance:
     - target: {fileID: 7265687600617336303, guid: 317b5fee6dd905d42a5c928462dfaed8,
         type: 3}
       propertyPath: m_Name
-      value: Merchant2
+      value: Merchant2Entity
       objectReference: {fileID: 0}
     - target: {fileID: 2301671290518302801, guid: 317b5fee6dd905d42a5c928462dfaed8,
         type: 3}
@@ -1729,7 +1729,6 @@ GameObject:
   - component: {fileID: 291915088}
   - component: {fileID: 291915091}
   - component: {fileID: 291915090}
-  - component: {fileID: 291915089}
   m_Layer: 0
   m_Name: Leaves (2)
   m_TagString: Untagged
@@ -1751,19 +1750,6 @@ Transform:
   m_Father: {fileID: 1775132864}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &291915089
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 291915087}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &291915090
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -4951,7 +4937,6 @@ GameObject:
   - component: {fileID: 918666317}
   - component: {fileID: 918666320}
   - component: {fileID: 918666319}
-  - component: {fileID: 918666318}
   m_Layer: 0
   m_Name: Leaves
   m_TagString: Untagged
@@ -4973,19 +4958,6 @@ Transform:
   m_Father: {fileID: 1775132864}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &918666318
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 918666316}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &918666319
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -6078,7 +6050,6 @@ GameObject:
   - component: {fileID: 1204615977}
   - component: {fileID: 1204615980}
   - component: {fileID: 1204615979}
-  - component: {fileID: 1204615978}
   m_Layer: 0
   m_Name: Leaves (1)
   m_TagString: Untagged
@@ -6100,19 +6071,6 @@ Transform:
   m_Father: {fileID: 1775132864}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &1204615978
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1204615976}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1204615979
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -6608,7 +6566,7 @@ PrefabInstance:
     - target: {fileID: 7265687600617336303, guid: 317b5fee6dd905d42a5c928462dfaed8,
         type: 3}
       propertyPath: m_Name
-      value: Merchant3
+      value: Merchant3Entity
       objectReference: {fileID: 0}
     - target: {fileID: 2301671290518302801, guid: 317b5fee6dd905d42a5c928462dfaed8,
         type: 3}
@@ -9861,7 +9819,7 @@ PrefabInstance:
     - target: {fileID: 7265687600617336303, guid: 317b5fee6dd905d42a5c928462dfaed8,
         type: 3}
       propertyPath: m_Name
-      value: Merchant1
+      value: Merchant1Entity
       objectReference: {fileID: 0}
     - target: {fileID: 2301671290518302801, guid: 317b5fee6dd905d42a5c928462dfaed8,
         type: 3}
