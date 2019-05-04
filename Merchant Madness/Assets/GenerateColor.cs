@@ -26,7 +26,7 @@ public class GenerateColor : MonoBehaviour
             new Color32(255, 0, 0, 255)
         };
 
-        merchant = GameObject.Find(gameObject.name);
+        merchant = GameObject.Find(gameObject.name + "Entity");
 
         GenerateRandomColor();
 

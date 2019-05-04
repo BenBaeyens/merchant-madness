@@ -23,10 +23,10 @@ public class MerchantPrefab : MonoBehaviour
     int totalAmountOfItems;
 
     private void Start() {
-        merchantEntity = GameObject.Find(gameObject.name);
+        merchantEntity = GameObject.Find(gameObject.name + "Entity");
        
 
-        me = GameObject.Find(gameObject.name).GetComponent<MerchantEntity>();
+        me = GameObject.Find(gameObject.name + "Entity").GetComponent<MerchantEntity>();
         totalAmountOfItems = merchant.totalItemAmount;
         source = gameObject.AddComponent<AudioSource>();
        
