@@ -12,10 +12,22 @@ public class GenerateColor : MonoBehaviour
     public List<Color32> bluecolors;
     public List<Color32> yellowcolors;
 
-    
+    public Material merchantDefault;
+
+
 
 
     public void Start() {
+        Material[] tempm = Resources.FindObjectsOfTypeAll<Material>();
+        foreach (Material m in tempm)
+        {
+            if (m.name == "MerchantDefault")
+            {
+                merchantDefault = m;
+                break;
+            }
+        }
+
         greencolors = new List<Color32>
         {
             new Color32(0, 90, 0, 255),
@@ -34,6 +46,12 @@ public class GenerateColor : MonoBehaviour
             new Color32(0, 0, 255, 255)
         };
 
+        yellowcolors = new List<Color32>
+        {
+            new Color32(255,239,213, 255),
+            new Color32(255,255,0,255)
+        };
+
         merchant = GameObject.Find(gameObject.name + "Entity");
 
         GenerateRandomColor();
@@ -46,7 +64,7 @@ public class GenerateColor : MonoBehaviour
 
         if(gameObject.GetComponent<MerchantPrefab>().merchant.color == 0)
         {
-            color = Random.Range(1, 4);
+            color = Random.Range(1, 5);
         } else
         {
             color = gameObject.GetComponent<MerchantPrefab>().merchant.color;
@@ -61,6 +79,12 @@ public class GenerateColor : MonoBehaviour
             merchant.GetComponent<Renderer>().material.color = Color.Lerp(redcolors[0], redcolors[1], colorval);
         if (color == 3)
             merchant.GetComponent<Renderer>().material.color = Color.Lerp(bluecolors[0], bluecolors[1], colorval);
+        if (color == 4)
+            merchant.GetComponent<Renderer>().material.color = Color.Lerp(yellowcolors[0], yellowcolors[1], colorval);
+    }
+
+    public void ResetColor() {
+        merchant.GetComponent<Renderer>().material = merchantDefault;
     }
 }
 
@@ -75,11 +99,17 @@ public class ColorInspector : Editor {
 
         GenerateColor gc = (GenerateColor)target;
 
+        GUILayout.BeginHorizontal();
         if(GUILayout.Button("Generate Color"))
         {
             gc.Start();
-
         }
+
+        if(GUILayout.Button("Reset Default Color"))
+        {
+            gc.ResetColor();
+        }
+        GUILayout.EndHorizontal();
     }
 
 }
