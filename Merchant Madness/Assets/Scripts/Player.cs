@@ -8,7 +8,7 @@ public class Player : MonoBehaviour
     public int goldCoins;
     public List<string> inventory;
 
-    [SerializeField] TextMeshProUGUI balanceDisplay;
+    public TextMeshProUGUI balanceDisplay;
 
     private void Start() {
         inventory = new List<string>();

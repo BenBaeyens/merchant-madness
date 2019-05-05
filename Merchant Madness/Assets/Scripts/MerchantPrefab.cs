@@ -6,7 +6,7 @@ using TMPro;
 public class MerchantPrefab : MonoBehaviour
 {
     [Header("Define the merchant type")]
-    [SerializeField] MerchantScriptableObject merchant;
+    public MerchantScriptableObject merchant;
 
     Player player;
     AudioSource source;
@@ -14,8 +14,6 @@ public class MerchantPrefab : MonoBehaviour
     GameObject merchantEntity;
 
     MerchantEntity me;
-
-    [HideInInspector] public int merchantcolor;
 
     
     [HideInInspector] public TextMeshProUGUI itemName;

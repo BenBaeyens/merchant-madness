@@ -9,7 +9,7 @@ public class GateScript : MonoBehaviour
     bool isPlayerInRange;
 
     [Header("Assign Next Platform (If needed)")]
-    [SerializeField] GameObject nextPlatform;
+    public GameObject nextPlatform;
 
     GameObject gateClickText;
 
