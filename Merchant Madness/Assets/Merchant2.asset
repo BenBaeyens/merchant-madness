@@ -15,6 +15,7 @@ MonoBehaviour:
   name: Jack
   welcomeText: Wouldyouliketobuyanything
   thankYouText: thankyouverymuch
+  color: 1
   totalItemAmount: 1
   itemDisplayName: Wooden Sword
   itemCodeName: sword_wooden

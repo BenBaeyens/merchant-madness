@@ -15,6 +15,7 @@ MonoBehaviour:
   name: Bob
   welcomeText: Hellostrangerwhatwoulditbe
   thankYouText: haveaniceday
+  color: 1
   totalItemAmount: 1
   itemDisplayName: Wooden Axe
   itemCodeName: axe_wooden

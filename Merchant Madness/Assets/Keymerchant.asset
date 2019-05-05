@@ -15,6 +15,7 @@ MonoBehaviour:
   name: Elai
   welcomeText: Wouldyouliketobuyanything
   thankYouText: thankyouverymuch
+  color: 1
   totalItemAmount: 1
   itemDisplayName: Mysterious Key
   itemCodeName: key_1
