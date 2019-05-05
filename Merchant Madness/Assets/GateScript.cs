@@ -40,6 +40,7 @@ public class GateScript : MonoBehaviour
     private void Update() {
         if(Input.GetKeyDown(KeyCode.Space) && isPlayerInRange && player.inventory.Contains("key_1"))
         {
+            player.inventory.Remove("key_1");
             gameObject.SetActive(false);
             nextPlatform.SetActive(true);
             gateClickText.SetActive(false);
