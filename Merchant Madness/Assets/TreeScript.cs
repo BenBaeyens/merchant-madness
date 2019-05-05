@@ -45,6 +45,7 @@ public class TreeScript : MonoBehaviour {
                 if (hitobj.name == "TreeActivationRange" && hitobj.transform.parent.name == gameObject.name)
                 {
                     treeHealth = TreeDamage();
+                    pl.inventory.Add("wooden_log");
                 }
             }
         }
