@@ -4432,7 +4432,7 @@ PrefabInstance:
     - target: {fileID: 2172748791759753452, guid: e89eaf02818f9814999d1c2554fb9d0f,
         type: 3}
       propertyPath: m_Name
-      value: Merchant3
+      value: KeyMerchant
       objectReference: {fileID: 0}
     - target: {fileID: 1534108958411197040, guid: e89eaf02818f9814999d1c2554fb9d0f,
         type: 3}
@@ -6657,7 +6657,7 @@ PrefabInstance:
     - target: {fileID: 7265687600617336303, guid: 317b5fee6dd905d42a5c928462dfaed8,
         type: 3}
       propertyPath: m_Name
-      value: Merchant3Entity
+      value: KeyMerchantEntity
       objectReference: {fileID: 0}
     - target: {fileID: 2301671290518302801, guid: 317b5fee6dd905d42a5c928462dfaed8,
         type: 3}
@@ -6714,6 +6714,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8526319836578805844, guid: 317b5fee6dd905d42a5c928462dfaed8,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 6cfe42141ee4b0f4ca441de80841b95e, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 317b5fee6dd905d42a5c928462dfaed8, type: 3}
 --- !u!1 &1391593015
@@ -9925,7 +9930,7 @@ PrefabInstance:
     - target: {fileID: 2301671290518302801, guid: 317b5fee6dd905d42a5c928462dfaed8,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 7.930355
+      value: 11.51
       objectReference: {fileID: 0}
     - target: {fileID: 2301671290518302801, guid: 317b5fee6dd905d42a5c928462dfaed8,
         type: 3}
