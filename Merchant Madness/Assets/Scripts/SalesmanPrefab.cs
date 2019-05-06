@@ -23,7 +23,6 @@ public class SalesmanPrefab : MonoBehaviour
        
 
         me = GameObject.Find(gameObject.name + "Entity").GetComponent<MerchantEntity>();
-        totalAmountOfItems = salesman.totalItemAmount;
         source = gameObject.AddComponent<AudioSource>();
        
         player = FindObjectOfType<Player>();

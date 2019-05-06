@@ -14,6 +14,8 @@ public class GenerateColor : MonoBehaviour
 
     public Material merchantDefault;
 
+    int color;
+
 
 
 
@@ -60,18 +62,27 @@ public class GenerateColor : MonoBehaviour
 
     public void GenerateRandomColor() {
         float colorval = Random.Range(0f, 1f);
-        int color;
+        
 
-        if(gameObject.GetComponent<MerchantPrefab>().merchant.color == 0)
+        if (gameObject.GetComponent<MerchantPrefab>() != null)
         {
-            color = Random.Range(1, 5);
-        } else
+            if (gameObject.GetComponent<MerchantPrefab>().merchant.color == 0)
+            {
+                color = Random.Range(1, 5);
+            } else
+            {
+                color = gameObject.GetComponent<MerchantPrefab>().merchant.color;
+            }
+        } else if (gameObject.GetComponent<SalesmanPrefab>() != null)
         {
-            color = gameObject.GetComponent<MerchantPrefab>().merchant.color;
+            if (gameObject.GetComponent<SalesmanPrefab>().salesman.color == 0)
+            {
+                color = Random.Range(1, 5);
+            } else
+            {
+                color = gameObject.GetComponent<SalesmanPrefab>().salesman.color;
+            }
         }
-
-        Debug.Log(color);
-        Debug.Log(gameObject.GetComponent<MerchantPrefab>().merchant.color);
 
         if (color == 1)
             merchant.GetComponent<Renderer>().material.color = Color.Lerp(greencolors[0], greencolors[1], colorval);
