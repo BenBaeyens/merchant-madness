@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 76f7673bfe19e204393f3ae9e2c3b333, type: 3}
-  m_Name: New Item
+  m_Name: Wooden axe
   m_EditorClassIdentifier: 
-  itemDisplayName: 
-  itemCodeName: 
-  itemLore: 
-  itemtype: 0
-  entityDefaultDamage: 0
-  treeDefaultDamage: 0
+  itemDisplayName: Wooden axe
+  itemCodeName: axe_wooden
+  itemLore: A sturdy, wooden axe that requires a fair bit of force to use.
+  itemtype: 2
+  entityDefaultDamage: 5
+  treeDefaultDamage: 1
   rockDefaultDamage: 0
