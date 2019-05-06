@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "New Merchant", menuName = "Merchant")]
+[CreateAssetMenu(fileName = "New Salesman", menuName = "Salesman")]
 public class SalesmanScriptableObject : ScriptableObject
 {
     [Header("Salesman Info")]
