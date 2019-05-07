@@ -13,11 +13,12 @@ MonoBehaviour:
   m_Name: Keymerchant
   m_EditorClassIdentifier: 
   name: Elai
-  welcomeText: Wouldyouliketobuyanything
-  thankYouText: thankyouverymuch
+  welcomeText: Welcome2
+  thankYouText: Bye2
   color: 4
   totalItemAmount: 1
   itemDisplayName: Mysterious Key
   itemCodeName: key_1
   itemAmount: 1
   itemPrice: 50
+  itemRequirement: 

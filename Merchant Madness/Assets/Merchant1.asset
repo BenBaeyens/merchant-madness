@@ -13,11 +13,12 @@ MonoBehaviour:
   m_Name: Merchant1
   m_EditorClassIdentifier: 
   name: Bob
-  welcomeText: Hellostrangerwhatwoulditbe
-  thankYouText: haveaniceday
+  welcomeText: Welcome1
+  thankYouText: Bye1
   color: 1
   totalItemAmount: 1
   itemDisplayName: Wooden Axe
   itemCodeName: axe_wooden
   itemAmount: 1
   itemPrice: 120
+  itemRequirement: 
