@@ -36,7 +36,7 @@ public class SalesmanPrefab : MonoBehaviour
             //Get the menu and set it active
             transform.GetChild(0).gameObject.SetActive(true); 
 
-            source.clip = Resources.Load<AudioClip>(salesman.welcomeText);
+            source.clip = Resources.Load<AudioClip>("Welcome" + salesman.welcomeText);
             source.Play();
             itemName.text = salesman.itemDisplayName;
             itemCompensation.text = salesman.itemCompensation.ToString() + " Gold Coins";
@@ -59,6 +59,8 @@ public class SalesmanPrefab : MonoBehaviour
         transform.GetChild(0).gameObject.SetActive(false);
         Debug.Log("Transaction ended.");
         Time.timeScale = 1f;
+        source.clip = Resources.Load<AudioClip>("ThankYou" + salesman.thankYouText);
+        source.Play();
     }
 
    

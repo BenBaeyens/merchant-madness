@@ -7,8 +7,8 @@ public class SalesmanScriptableObject : ScriptableObject
 {
     [Header("Salesman Info")]
     public new string name;
-    public string welcomeText;
-    public string thankYouText;
+    public int welcomeText;
+    public int thankYouText;
 
     [Header("1 = GREEN, 2 = RED, 3 = BLUE, 4 = YELLOW")]
     public int color;

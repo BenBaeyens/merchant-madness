@@ -50,7 +50,7 @@ public class MerchantPrefab : MonoBehaviour
             //Get the menu and set it active
             transform.GetChild(0).gameObject.SetActive(true); 
 
-            source.clip = Resources.Load<AudioClip>(merchant.welcomeText);
+            source.clip = Resources.Load<AudioClip>("Welcome" + merchant.welcomeText);
             source.Play();
             itemName.text = merchant.itemDisplayName;
             itemPrice.text = merchant.itemPrice.ToString() + " Gold Coins";
@@ -66,7 +66,7 @@ public class MerchantPrefab : MonoBehaviour
     public void Purchase() {
         if(player.goldCoins >= merchant.itemPrice)
         {
-            source.clip = Resources.Load<AudioClip>(merchant.thankYouText);
+            source.clip = Resources.Load<AudioClip>("ThankYou" + merchant.thankYouText);
             source.Play();
             player.goldCoins -= merchant.itemPrice;
             player.inventory.Add(merchant.itemCodeName.ToString());
