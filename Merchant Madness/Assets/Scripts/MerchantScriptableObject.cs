@@ -17,6 +17,8 @@ public class MerchantScriptableObject : ScriptableObject
     public int totalItemAmount;
 
     [Header("Item Info")]
+    public ItemScriptableObject item;
+
     public string itemDisplayName;
     public string itemCodeName;
     public int itemAmount;

@@ -17,6 +17,8 @@ public class SalesmanScriptableObject : ScriptableObject
     public int totalItemAmount;
 
     [Header("Item you want to sell - Info")]
+    public ItemScriptableObject item;
+
     public string itemDisplayName;
     public string itemCodeName;
     public int itemAmount;
