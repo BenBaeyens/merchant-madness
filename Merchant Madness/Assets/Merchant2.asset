@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Merchant2
   m_EditorClassIdentifier: 
   name: Jack
-  welcomeText: Welcome1
-  thankYouText: Bye1
+  welcomeText: 1
+  thankYouText: 1
   color: 1
   totalItemAmount: 1
   itemDisplayName: Wooden Sword
