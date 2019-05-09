@@ -9,17 +9,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ce2fbb4e759d6924eacd756a3261a674, type: 3}
-  m_Name: Keymerchant
+  m_Script: {fileID: 11500000, guid: 76f7673bfe19e204393f3ae9e2c3b333, type: 3}
+  m_Name: Key 2
   m_EditorClassIdentifier: 
-  name: Elai
-  welcomeText: 2
-  thankYouText: 2
-  color: 4
-  totalItemAmount: 1
-  item: {fileID: 11400000, guid: f9f3a9f45013b0846a1aa0db28aa0422, type: 2}
   itemDisplayName: Mysterious Key
-  itemCodeName: key_1
-  itemAmount: 1
-  itemPrice: 50
-  itemRequirement: 
+  itemCodeName: key_2
+  itemLore: A key... I wonder what it's for...
+  itemtype: 4
+  entityDefaultDamage: 0
+  treeDefaultDamage: 0
+  rockDefaultDamage: 0
