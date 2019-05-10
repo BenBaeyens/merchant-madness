@@ -5,7 +5,7 @@ using UnityEngine;
 public class GateScript : MonoBehaviour
 {
     Player player;
-    public string keycodename;
+    public ItemScriptableObject key;
 
     bool isPlayerInRange;
 
@@ -30,7 +30,7 @@ public class GateScript : MonoBehaviour
 
     private void OnTriggerEnter(Collider other) {
         isPlayerInRange = true;
-        if(player.inventory.Contains(keycodename))
+        if(player.inventory.Contains(key.itemCodeName))
             gateClickText.SetActive(true);
     }
     private void OnTriggerExit(Collider other) {
@@ -39,7 +39,7 @@ public class GateScript : MonoBehaviour
     }
 
     private void Update() {
-        if(Input.GetKeyDown(KeyCode.Space) && isPlayerInRange && player.inventory.Contains(keycodename))
+        if(Input.GetKeyDown(KeyCode.Space) && isPlayerInRange && player.inventory.Contains(key.itemCodeName))
         {
             player.inventory.Remove("key_1");
             gameObject.SetActive(false);
