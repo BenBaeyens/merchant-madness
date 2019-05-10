@@ -2126,6 +2126,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98812fd68611e6e468444921cf76ac08, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  keycodename: key_1
   nextPlatform: {fileID: 1266853010}
 --- !u!136 &270547731
 CapsuleCollider:
@@ -11913,6 +11914,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98812fd68611e6e468444921cf76ac08, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  keycodename: key_2
   nextPlatform: {fileID: 2116819824}
 --- !u!136 &1656644964
 CapsuleCollider:
