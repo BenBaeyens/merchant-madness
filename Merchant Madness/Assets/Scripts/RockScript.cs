@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class RockScript : MonoBehaviour {
 
-    public float treeHealth;
+    public float rockHealth;
 
     bool hasPickaxe = false;
 
-    public GameObject treeRange;
+    public GameObject rockRange;
     public GameObject player;
     public Player pl;
 
@@ -23,7 +23,7 @@ public class RockScript : MonoBehaviour {
         if (!hasPickaxe) {
             for (int i = 0; i < pl.inventory.Count; i++)
             {
-                if (pl.inventory[i].Contains("axe"))
+                if (pl.inventory[i].Contains("pickaxe"))
                 {
                     hasPickaxe = true;
                     break;
@@ -31,7 +31,7 @@ public class RockScript : MonoBehaviour {
             }
         }
 
-        if (treeRange.GetComponent<TreeHitboxScript>().isPlayerInRange
+        if (rockRange.GetComponent<TreeHitboxScript>().isPlayerInRange
             && hasPickaxe
             && Input.GetMouseButtonDown(0))
         {
@@ -42,24 +42,24 @@ public class RockScript : MonoBehaviour {
             if (Physics.Raycast(ray, out hit))
             {
                 GameObject hitobj = hit.transform.gameObject;
-                if (hitobj.name == "TreeActivationRange" && hitobj.transform.parent.name == gameObject.name)
+                if (hitobj.name == "RockActivationRange" && hitobj.transform.parent.name == gameObject.name)
                 {
-                    treeHealth = TreeDamage();
-                    pl.inventory.Add("wooden_log");
+                    rockHealth = TreeDamage();
+                    pl.inventory.Add("stone_chunk");
                 }
             }
         }
 
 
-        if(treeHealth <= 0)
+        if(rockHealth <= 0)
         {
             Destroy(gameObject);
         }
     }
 
     float TreeDamage() {
-        if (pl.inventory.Contains("axe_wooden"))
-            return treeHealth - 1f;
+        if (pl.inventory.Contains("pickaxe_wooden"))
+            return rockHealth - 1f;
         else
             return 0f;
     }
