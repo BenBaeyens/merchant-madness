@@ -104,6 +104,15 @@ public class GenerateColor : MonoBehaviour
     }
 
     public void ResetColor() {
+        Material[] tempm = Resources.FindObjectsOfTypeAll<Material>();
+        foreach (Material m in tempm)
+        {
+            if (m.name == "MerchantDefault")
+            {
+                merchantDefault = m;
+                break;
+            }
+        } 
         merchant.GetComponent<Renderer>().material = merchantDefault;
     }
 }
