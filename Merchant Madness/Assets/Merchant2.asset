@@ -15,7 +15,7 @@ MonoBehaviour:
   name: Jack
   welcomeText: 1
   thankYouText: 1
-  color: 1
+  color: 5
   totalItemAmount: 1
   item: {fileID: 11400000, guid: 65ad349a84923254d91b178522e38588, type: 2}
   itemDisplayName: Wooden Sword
