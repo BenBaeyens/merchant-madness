@@ -11,6 +11,7 @@ public class GenerateColor : MonoBehaviour
     public List<Color32> redcolors;
     public List<Color32> bluecolors;
     public List<Color32> yellowcolors;
+    public List<Color32> greycolors;
 
     public Material merchantDefault;
 
@@ -29,6 +30,12 @@ public class GenerateColor : MonoBehaviour
                 break;
             }
         }
+
+        greycolors = new List<Color32>
+        {
+            new Color32(200, 200, 200, 255)
+            new Color32(100, 100, 100, 255)
+        };
 
         greencolors = new List<Color32>
         {
@@ -66,9 +73,9 @@ public class GenerateColor : MonoBehaviour
 
         if (gameObject.GetComponent<MerchantPrefab>() != null)
         {
-            if (gameObject.GetComponent<MerchantPrefab>().merchant.color == 0)
+            if (gameObject.GetComponent<MerchantPrefab>().merchant.color == 0 || gameObject.GetComponent<MerchantPrefab>().merchant.color > 5)
             {
-                color = Random.Range(1, 5);
+                color = Random.Range(1, 6);
             } else
             {
                 color = gameObject.GetComponent<MerchantPrefab>().merchant.color;
@@ -92,6 +99,8 @@ public class GenerateColor : MonoBehaviour
             merchant.GetComponent<Renderer>().material.color = Color.Lerp(bluecolors[0], bluecolors[1], colorval);
         if (color == 4)
             merchant.GetComponent<Renderer>().material.color = Color.Lerp(yellowcolors[0], yellowcolors[1], colorval);
+        if (color == 5)
+            merchant.GetComponent<Renderer>().material.color = Color.Lerp(greycolors[0], greycolors[1], colorval);
     }
 
     public void ResetColor() {
