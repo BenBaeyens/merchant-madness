@@ -10,7 +10,7 @@ public class MerchantScriptableObject : ScriptableObject
     public int welcomeText;
     public int thankYouText;
 
-    [Header("1 = GREEN, 2 = RED, 3 = BLUE, 4 = YELLOW")]
+    [Header("1 = Green, 2 = Red, 3 = Blue, 4 = Yellow, 5 = Grey")]
     public int color;
 
     [Header("Total amount of items this merchant sells")]

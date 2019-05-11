@@ -33,7 +33,7 @@ public class GenerateColor : MonoBehaviour
 
         greycolors = new List<Color32>
         {
-            new Color32(200, 200, 200, 255)
+            new Color32(200, 200, 200, 255),
             new Color32(100, 100, 100, 255)
         };
 
