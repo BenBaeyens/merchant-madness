@@ -53,6 +53,7 @@ public class TreeScript : MonoBehaviour {
 
         if(treeHealth <= 0)
         {
+            pl.inventory.Add("wooden_log");
             Destroy(gameObject);
         }
     }
