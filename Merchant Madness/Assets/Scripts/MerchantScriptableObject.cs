@@ -23,5 +23,5 @@ public class MerchantScriptableObject : ScriptableObject
     public string itemCodeName;
     public int itemAmount;
     public int itemPrice;
-    public string itemRequirement;
+    public List<ItemScriptableObject> itemRequirments;
 }
