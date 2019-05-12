@@ -16,6 +16,9 @@ MonoBehaviour:
   itemCodeName: wooden_log
   itemLore: A sturdy piece of wood. Great for trading!
   itemtype: 0
+  isSellable: 1
+  itemPrice: 10
+  itemValue: 5
   entityDefaultDamage: 0
   treeDefaultDamage: 0
   rockDefaultDamage: 0

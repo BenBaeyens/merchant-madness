@@ -16,6 +16,9 @@ MonoBehaviour:
   itemCodeName: pickaxe_wooden
   itemLore: A sturdy, wooden pickaxe that requires a fair bit of force to use.
   itemtype: 3
+  isSellable: 0
+  itemPrice: 120
+  itemValue: 0
   entityDefaultDamage: 5
   treeDefaultDamage: 0
   rockDefaultDamage: 1

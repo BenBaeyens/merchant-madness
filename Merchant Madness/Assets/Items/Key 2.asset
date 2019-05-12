@@ -14,8 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemDisplayName: Mysterious Key
   itemCodeName: key_2
-  itemLore: A key... I wonder what it's for...
+  itemLore: Another key... Strange..
   itemtype: 4
+  isSellable: 0
+  itemPrice: 90
+  itemValue: 0
   entityDefaultDamage: 0
   treeDefaultDamage: 0
   rockDefaultDamage: 0

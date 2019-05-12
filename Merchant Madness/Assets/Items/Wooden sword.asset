@@ -16,6 +16,9 @@ MonoBehaviour:
   itemCodeName: sword_wooden
   itemLore: A sword made from sturdy wood. It doesn't do a lot of damage, but it works!
   itemtype: 1
-  entityDefaultDamage: 0.5
+  isSellable: 0
+  itemPrice: 120
+  itemValue: 0
+  entityDefaultDamage: 7
   treeDefaultDamage: 0
   rockDefaultDamage: 0

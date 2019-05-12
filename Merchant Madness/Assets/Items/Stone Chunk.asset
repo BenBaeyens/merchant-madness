@@ -10,15 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 76f7673bfe19e204393f3ae9e2c3b333, type: 3}
-  m_Name: Key 1
+  m_Name: Stone Chunk
   m_EditorClassIdentifier: 
-  itemDisplayName: Mysterious Key
-  itemCodeName: key_1
-  itemLore: A key... I wonder what it's for...
-  itemtype: 4
-  isSellable: 0
-  itemPrice: 50
-  itemValue: 0
+  itemDisplayName: Stone Chunk
+  itemCodeName: stone_chunk
+  itemLore: A rough piece of stone. Not very useful, but sells well on the market!
+  itemtype: 0
+  isSellable: 1
+  itemPrice: 12
+  itemValue: 6
   entityDefaultDamage: 0
   treeDefaultDamage: 0
   rockDefaultDamage: 0

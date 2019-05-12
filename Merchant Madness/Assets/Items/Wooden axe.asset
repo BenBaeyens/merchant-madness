@@ -16,6 +16,9 @@ MonoBehaviour:
   itemCodeName: axe_wooden
   itemLore: A sturdy, wooden axe that requires a fair bit of force to use.
   itemtype: 2
+  isSellable: 0
+  itemPrice: 90
+  itemValue: 0
   entityDefaultDamage: 5
   treeDefaultDamage: 1
   rockDefaultDamage: 0
