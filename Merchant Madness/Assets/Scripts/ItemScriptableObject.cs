@@ -12,6 +12,12 @@ public class ItemScriptableObject : ScriptableObject {
     [Header("Item Type")]
     public itemType itemtype;
 
+    [Header("Buy/Sell Info")]
+    public bool isSellable;
+    public float itemPrice;
+    public float itemValue;
+
+
     [Header("Item Stats")]
     public float entityDefaultDamage;
     public float treeDefaultDamage;
