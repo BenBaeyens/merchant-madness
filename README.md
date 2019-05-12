@@ -22,5 +22,16 @@ I want to try a few different things with this project, such as:
   - At the moment, the best way to fix it seems to manually input the colors into the prefab, which is still better than spaghetti-code, but not quite what I wanted it to be. 
 - How did I solve it?
   - The current way I solved it is by having several lists of 2 colors each, which the script picks from based on a random lerp value to get multiple million different color combinations based off of presets that you can predefine (Currently you can only define this in script or editor). 
+  
+#### Item selling/buying
+- What is it? How did I get stuck?
+  - As a result of not planning out properly, or rather thinking I had planned out when in reality the system was flaud, organising item selling for all different merchants and salesmen was getting slightly difficult.
+  - There was no oversight of which merchants sold which items
+- How will I try to fix it?
+  - I have planned out a system that I will be using for future trading/item buying/selling by having scriptable item objects.
+- How did I solve it?
+  - I used scriptable item objects, and attach them in a list so you can see which items the merchant is selling. This is way easier to see which merchants sell which items. And if you want the info for the item, you double click the item and all the information is layed out right there.
+
+
 
 ###### Developed by Kjip(Gamer). Original development since April 2019.
