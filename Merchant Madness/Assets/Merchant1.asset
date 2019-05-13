@@ -17,9 +17,9 @@ MonoBehaviour:
   thankYouText: 1
   color: 1
   totalItemAmount: 1
-  item: {fileID: 0}
+  item: {fileID: 11400000, guid: 94e60eba045094c41997ebef777af097, type: 2}
   itemDisplayName: Wooden Axe
   itemCodeName: axe_wooden
   itemAmount: 1
   itemPrice: 90
-  itemRequirement: 
+  itemRequirments: []

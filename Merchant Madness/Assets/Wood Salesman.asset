@@ -17,6 +17,7 @@ MonoBehaviour:
   thankYouText: 2
   color: 4
   totalItemAmount: 1
+  item: {fileID: 11400000, guid: bb4d8342184e28b458e2266fcda69cc3, type: 2}
   itemDisplayName: Wood Log
   itemCodeName: wooden_log
   itemAmount: 1
