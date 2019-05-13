@@ -16,6 +16,15 @@ public class TreeScript : MonoBehaviour {
     private void Start() {
         player = GameObject.Find("Player");
         pl = player.GetComponent<Player>();
+        ItemScriptableObject[] templog = Resources.FindObjectsOfTypeAll<ItemScriptableObject>();
+        foreach (ItemScriptableObject i in templog)
+        {
+            if (i.itemCodeName == "wooden_log")
+            {
+                log = i;
+                break;
+            }
+        }
     }
 
     private void Update() {

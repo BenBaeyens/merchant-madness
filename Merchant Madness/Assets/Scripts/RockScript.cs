@@ -17,6 +17,15 @@ public class RockScript : MonoBehaviour {
     private void Start() {
         player = GameObject.Find("Player");
         pl = player.GetComponent<Player>();
+        ItemScriptableObject[] tempstone = Resources.FindObjectsOfTypeAll<ItemScriptableObject>();
+        foreach(ItemScriptableObject i in tempstone)
+        {
+            if (i.itemCodeName == "stone_chunk")
+            {
+                stonechunk = i;
+                break;
+            }
+        }
     }
 
     private void Update() {
