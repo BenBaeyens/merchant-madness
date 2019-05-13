@@ -55,7 +55,7 @@ public class RockScript : MonoBehaviour {
                 GameObject hitobj = hit.transform.gameObject;
                 if (hitobj.name == "RockActivationRange" && hitobj.transform.parent.name == gameObject.name)
                 {
-                    rockHealth = RockDamage();
+                    RockDamage();
                     pl.inventory.Add(stonechunk);
                 }
             }
@@ -69,20 +69,19 @@ public class RockScript : MonoBehaviour {
         }
     }
 
-    float RockDamage() {
+    void RockDamage() {
 
         for (int i = 0; i < pl.inventory.Count; i++)
         {
             if (pl.inventory[i].name.Contains("wooden"))
             {
               
-              return rockHealth - 1f;
+              rockHealth =- 1f;
                
             }
-            else
-              return 0f;
+            
         }
-        return 0;
+        
     }
 
     

@@ -54,7 +54,7 @@ public class TreeScript : MonoBehaviour {
                 GameObject hitobj = hit.transform.gameObject;
                 if (hitobj.name == "TreeActivationRange" && hitobj.transform.parent.name == gameObject.name)
                 {
-                    treeHealth = TreeDamage();
+                    TreeDamage();
                     pl.inventory.Add(log);
                 }
             }
@@ -68,19 +68,20 @@ public class TreeScript : MonoBehaviour {
         }
     }
 
-    float TreeDamage() {
+    void TreeDamage() {
+        
         for (int i = 0; i < pl.inventory.Count; i++)
         {
             if (pl.inventory[i].name.Contains("axe_wooden"))
             {
-                return treeHealth - 1f;
+                treeHealth =- 1f;
                 
-            } else
-            {
-                return 0f;
             }
         }
-        return 0;
+        
+        
+            
+        
     }
 
     
