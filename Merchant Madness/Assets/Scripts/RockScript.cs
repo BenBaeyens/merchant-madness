@@ -73,10 +73,11 @@ public class RockScript : MonoBehaviour {
 
         for (int i = 0; i < pl.inventory.Count; i++)
         {
-            if (pl.inventory[i].name.Contains("wooden"))
+            if (pl.inventory[i].itemCodeName.Contains("pickaxe_wooden"))
             {
               
-              rockHealth =- 1f;
+              rockHealth -= 1f;
+                break;
                
             }
             

@@ -64,7 +64,7 @@ public class TreeScript : MonoBehaviour {
         if(treeHealth <= 0)
         {
             pl.inventory.Add(log);
-            Destroy(gameObject);
+            //Destroy(gameObject);
         }
     }
 
@@ -72,9 +72,10 @@ public class TreeScript : MonoBehaviour {
         
         for (int i = 0; i < pl.inventory.Count; i++)
         {
-            if (pl.inventory[i].name.Contains("axe_wooden"))
+            if (pl.inventory[i].itemCodeName.Contains("axe_wooden"))
             {
-                treeHealth =- 1f;
+                treeHealth -= 1f;
+                break;
                 
             }
         }
