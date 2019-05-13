@@ -52,8 +52,8 @@ public class MerchantPrefab : MonoBehaviour
 
             source.clip = Resources.Load<AudioClip>("Welcome" + merchant.welcomeText);
             source.Play();
-            itemName.text = merchant.itemDisplayName;
-            itemPrice.text = merchant.itemPrice.ToString() + " Gold Coins";
+            itemName.text = merchant.item.itemDisplayName;
+            itemPrice.text = merchant.item.itemPrice.ToString() + " Gold Coins";
             itemAmount.text = merchant.itemAmount.ToString() + "x";
         }
        else  if (me.isPlayerInRange && Input.GetKeyDown(KeyCode.Space) && totalAmountOfItems == 0)
@@ -69,7 +69,7 @@ public class MerchantPrefab : MonoBehaviour
             source.clip = Resources.Load<AudioClip>("ThankYou" + merchant.thankYouText);
             source.Play();
             player.goldCoins -= merchant.itemPrice;
-            player.inventory.Add(merchant.itemCodeName.ToString());
+            player.inventory.Add(merchant.item);
             Debug.Log(merchant.itemDisplayName + " aquired.");
             Debug.Log(player.goldCoins);
             totalAmountOfItems--;

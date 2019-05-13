@@ -30,7 +30,7 @@ public class GateScript : MonoBehaviour
 
     private void OnTriggerEnter(Collider other) {
         isPlayerInRange = true;
-        if(player.inventory.Contains(key.itemCodeName))
+        if(player.inventory.Contains(key))
             gateClickText.SetActive(true);
     }
     private void OnTriggerExit(Collider other) {
@@ -39,9 +39,9 @@ public class GateScript : MonoBehaviour
     }
 
     private void Update() {
-        if(Input.GetKeyDown(KeyCode.Space) && isPlayerInRange && player.inventory.Contains(key.itemCodeName))
+        if(Input.GetKeyDown(KeyCode.Space) && isPlayerInRange && player.inventory.Contains(key))
         {
-            player.inventory.Remove(key.itemCodeName);
+            player.inventory.Remove(key);
             gameObject.SetActive(false);
             nextPlatform.SetActive(true);
             gateClickText.SetActive(false);

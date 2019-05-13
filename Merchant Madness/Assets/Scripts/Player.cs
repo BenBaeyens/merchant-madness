@@ -6,12 +6,12 @@ using TMPro;
 public class Player : MonoBehaviour
 {
     public int goldCoins;
-    public List<string> inventory;
+    public List<ItemScriptableObject> inventory;
 
     public TextMeshProUGUI balanceDisplay;
 
     private void Start() {
-        inventory = new List<string>();
+        inventory = new List<ItemScriptableObject>();
     }
 
     private void Update() {
