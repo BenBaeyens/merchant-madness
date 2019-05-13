@@ -11,6 +11,7 @@ public class TreeScript : MonoBehaviour {
     public GameObject treeRange;
     public GameObject player;
     public Player pl;
+    public ItemScriptableObject log;
 
     private void Start() {
         player = GameObject.Find("Player");
@@ -23,7 +24,7 @@ public class TreeScript : MonoBehaviour {
         if (!hasAxe) {
             for (int i = 0; i < pl.inventory.Count; i++)
             {
-                if (pl.inventory[i].Contains("axe"))
+                if (pl.inventory[i].name.Contains("axe"))
                 {
                     hasAxe = true;
                     break;
@@ -45,7 +46,7 @@ public class TreeScript : MonoBehaviour {
                 if (hitobj.name == "TreeActivationRange" && hitobj.transform.parent.name == gameObject.name)
                 {
                     treeHealth = TreeDamage();
-                    pl.inventory.Add("wooden_log");
+                    pl.inventory.Add(log);
                 }
             }
         }
@@ -53,16 +54,24 @@ public class TreeScript : MonoBehaviour {
 
         if(treeHealth <= 0)
         {
-            pl.inventory.Add("wooden_log");
+            pl.inventory.Add(log);
             Destroy(gameObject);
         }
     }
 
     float TreeDamage() {
-        if (pl.inventory.Contains("axe_wooden"))
-            return treeHealth - 1f;
-        else
-            return 0f;
+        for (int i = 0; i < pl.inventory.Count; i++)
+        {
+            if (pl.inventory[i].name.Contains("axe_wooden"))
+            {
+                return treeHealth - 1f;
+                
+            } else
+            {
+                return 0f;
+            }
+        }
+        return 0;
     }
 
     

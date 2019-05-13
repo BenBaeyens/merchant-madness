@@ -12,6 +12,8 @@ public class RockScript : MonoBehaviour {
     public GameObject player;
     public Player pl;
 
+    public ItemScriptableObject stonechunk;
+
     private void Start() {
         player = GameObject.Find("Player");
         pl = player.GetComponent<Player>();
@@ -23,7 +25,7 @@ public class RockScript : MonoBehaviour {
         if (!hasPickaxe) {
             for (int i = 0; i < pl.inventory.Count; i++)
             {
-                if (pl.inventory[i].Contains("pickaxe"))
+                if (pl.inventory[i].name.Contains("pickaxe"))
                 {
                     hasPickaxe = true;
                     break;
@@ -45,7 +47,7 @@ public class RockScript : MonoBehaviour {
                 if (hitobj.name == "RockActivationRange" && hitobj.transform.parent.name == gameObject.name)
                 {
                     rockHealth = RockDamage();
-                    pl.inventory.Add("stone_chunk");
+                    pl.inventory.Add(stonechunk);
                 }
             }
         }
@@ -54,15 +56,24 @@ public class RockScript : MonoBehaviour {
         if(rockHealth <= 0)
         {
             Destroy(gameObject);
-            pl.inventory.Add("stone_chunk");
+            pl.inventory.Add(stonechunk);
         }
     }
 
     float RockDamage() {
-        if (pl.inventory.Contains("pickaxe_wooden"))
-            return rockHealth - 1f;
-        else
-            return 0f;
+
+        for (int i = 0; i < pl.inventory.Count; i++)
+        {
+            if (pl.inventory[i].name.Contains("wooden"))
+            {
+              
+              return rockHealth - 1f;
+               
+            }
+            else
+              return 0f;
+        }
+        return 0;
     }
 
     

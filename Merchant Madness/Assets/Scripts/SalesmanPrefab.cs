@@ -46,10 +46,10 @@ public class SalesmanPrefab : MonoBehaviour
 
 
     public void Purchase() {
-        if(player.inventory.Contains(salesman.itemCodeName))
+        if(player.inventory.Contains(salesman.item))
         {
             player.goldCoins += salesman.itemCompensation;
-            player.inventory.Remove(salesman.itemCodeName.ToString());
+            player.inventory.Remove(salesman.item);
             Debug.Log(salesman.itemDisplayName + " sold.");
             Debug.Log(player.goldCoins);
         }
