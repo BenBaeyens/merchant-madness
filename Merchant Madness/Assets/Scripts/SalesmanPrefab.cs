@@ -18,6 +18,9 @@ public class SalesmanPrefab : MonoBehaviour
     [HideInInspector] public TextMeshProUGUI itemCompensation;
     [HideInInspector] public TextMeshProUGUI itemAmount;
 
+    int _itemAmount;
+
+
 
     private void Start() {
        
@@ -38,9 +41,18 @@ public class SalesmanPrefab : MonoBehaviour
 
             source.clip = Resources.Load<AudioClip>("Welcome" + salesman.welcomeText);
             source.Play();
-            itemName.text = salesman.itemDisplayName;
-            itemCompensation.text = salesman.itemCompensation.ToString() + " Gold Coins";
-            itemAmount.text = salesman.itemAmount.ToString() + "x";
+            itemName.text = salesman.item.itemDisplayName;
+            itemCompensation.text = salesman.item.itemPrice.ToString() + " Gold Coins";
+            itemAmount.text = _itemAmount.ToString() + "x";
+            for (int i = 0; i < player.inventory.Count; i++)
+            {
+                Debug.Log(player.inventory.Count);
+                if(player.inventory[i].itemDisplayName == salesman.item.itemPrice.ToString())
+                {
+                   _itemAmount++;
+                }
+            }
+            itemAmount.text = _itemAmount.ToString() + "x left";
         }
     }
 
@@ -48,10 +60,11 @@ public class SalesmanPrefab : MonoBehaviour
     public void Purchase() {
         if(player.inventory.Contains(salesman.item))
         {
-            player.goldCoins += salesman.itemCompensation;
+            player.goldCoins += (int)salesman.item.itemPrice;
             player.inventory.Remove(salesman.item);
-            Debug.Log(salesman.itemDisplayName + " sold.");
+            Debug.Log(salesman.item.itemDisplayName + " sold.");
             Debug.Log(player.goldCoins);
+            _itemAmount--;
         }
     }
 
