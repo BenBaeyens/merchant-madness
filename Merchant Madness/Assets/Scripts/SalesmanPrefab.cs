@@ -65,6 +65,7 @@ public class SalesmanPrefab : MonoBehaviour
             Debug.Log(salesman.item.itemDisplayName + " sold.");
             Debug.Log(player.goldCoins);
             _itemAmount--;
+            itemAmount.text = _itemAmount.ToString();
         }
     }
 
