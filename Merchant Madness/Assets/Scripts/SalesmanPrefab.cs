@@ -35,7 +35,6 @@ public class SalesmanPrefab : MonoBehaviour
     {
         if(me.isPlayerInRange && Input.GetKeyDown(KeyCode.Space))
         {
-            Time.timeScale = 0f;
             //Get the menu and set it active
             transform.GetChild(0).gameObject.SetActive(true); 
 
@@ -47,12 +46,13 @@ public class SalesmanPrefab : MonoBehaviour
             for (int i = 0; i < player.inventory.Count; i++)
             {
                 Debug.Log(player.inventory.Count);
-                if(player.inventory[i].itemDisplayName == salesman.item.itemPrice.ToString())
+                if(player.inventory[i] == salesman.item)
                 {
                    _itemAmount++;
                 }
             }
             itemAmount.text = _itemAmount.ToString() + "x left";
+            Time.timeScale = 0f;
         }
     }
 
